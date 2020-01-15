@@ -2,19 +2,19 @@
 <!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v2.dtd">
 <config>
   <module name="network">
-    <param name="inputNetworkFile" value="network.xml"/>
+    <param name="inputNetworkFile" value="network.xml.gz"/>
   </module>
   <module name="vehicles">
-    <param name="vehiclesFile" value="vehicles.xml"/>
+    <param name="vehiclesFile" value="vehicles.xml.gz"/>
   </module>
   <module name="plans">
-    <param name="inputPlansFile" value="plans.xml"/>
+    <param name="inputPlansFile" value="plans.xml.gz"/>
   </module>
   <module name="transit">
     <param name="useTransit" value="true"/>
     <param name="transitModes" value="pt"/>
-    <param name="transitScheduleFile" value="transitSchedule.xml"/>
-    <param name="vehiclesFile" value="transitVehicles.xml"/>
+    <param name="transitScheduleFile" value="transitSchedule.xml.gz"/>
+    <param name="vehiclesFile" value="transitVehicles.xml.gz"/>
   </module>
   <module name="transitRouter">
     <param name="additionalTransferTime" value="0.0"/>
@@ -24,7 +24,7 @@
     <param name="searchRadius" value="1000.0"/>
   </module>
   <module name="controler">
-    <param name="outputDirectory" value="D:\Benjamin Brownlee\matsim\run11\output\"/>
+    <param name="outputDirectory" value="output"/>
     <param name="firstIteration" value="0"/>
     <param name="lastIteration" value="5"/>
     <param name="writeEventsInterval" value="5"/>

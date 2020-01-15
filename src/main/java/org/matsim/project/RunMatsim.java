@@ -20,11 +20,15 @@ package org.matsim.project;
 
 import ch.sbb.matsim.routing.pt.raptor.SwissRailRaptorModule;
 import org.matsim.api.core.v01.Scenario;
+import org.matsim.api.core.v01.TransportMode;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
+import org.matsim.core.config.groups.PlansCalcRouteConfigGroup;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
 import org.matsim.core.scenario.ScenarioUtils;
+
+import static org.matsim.core.config.groups.PlansCalcRouteConfigGroup.*;
 
 /**
  * @author nagel
@@ -34,14 +38,17 @@ public class RunMatsim{
 
 	public static void main(String[] args) {
 
-		Config config = ConfigUtils.loadConfig( "/Users/kainagel/Dropbox/icarus-debug/input/config.xml" ) ;
+		Config config = ConfigUtils.loadConfig( "scenarios/icarus-debug/config.xml" ) ;
 		
 		// possibly modify config here
 		config.controler().setOverwriteFileSetting( OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists );
 		config.controler().setOutputDirectory( "output" );
 		config.controler().setLastIteration( 0 );
 
-		config.plans().setInputFile( "plans3.xml" );
+		config.plans().setInputFile( "plans-reduced.xml" );
+
+		config.transit().setUseTransit( false );
+		config.plansCalcRoute().addModeRoutingParams( new ModeRoutingParams( TransportMode.pt ).setTeleportedModeFreespeedFactor( 2. ) );
 
 		// ---
 		
