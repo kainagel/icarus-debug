@@ -43,55 +43,49 @@ public class RunMatsimTest {
 
 	@Test
 	public final void testIcarus() {
-		String [] args = { "/Users/kainagel/Dropbox/icarus-debug/input/config.xml",
+		String [] args = { "scenarios/icarus-debug/config.xml",
 						 "--config:controler.outputDirectory",utils.getOutputDirectory(),
-						 "--config:controler.lastIteration","1"
+						 "--config:controler.lastIteration","0"
 		};
 		RunMatsim.main( args );
 	}
 
-	@Test
-	public final void test() {
+//	@Test
+//	public final void testEquil() {
+//
+//		try {
+////			final URL baseUrl = ExamplesUtils.getTestScenarioURL( "equil" );
+////			final String fullUrl = IOUtils.extendUrl( baseUrl, "config.xml" ).toString();
+//			String [] args = {"scenarios/equil/config.xml",
+//				  "--config:controler.outputDirectory", utils.getOutputDirectory(),
+//				  "--config:controler.lastIteration", "1"
+//			} ;
+//			RunMatsim.main( args ) ;
+//			{
+//				Population expected = PopulationUtils.createPopulation( ConfigUtils.createConfig() ) ;
+//				PopulationUtils.readPopulation( expected, utils.getInputDirectory() + "/output_plans.xml.gz" );
+//
+//				Population actual = PopulationUtils.createPopulation( ConfigUtils.createConfig() ) ;
+//				PopulationUtils.readPopulation( actual, utils.getOutputDirectory() + "/output_plans.xml.gz" );
+//
+//				boolean result = PopulationUtils.comparePopulations( expected, actual );
+//				Assert.assertTrue( result );
+//			}
+//			{
+//				String expected = utils.getInputDirectory() + "/output_events.xml.gz" ;
+//				String actual = utils.getOutputDirectory() + "/output_events.xml.gz" ;
+//				EventsFileComparator.Result result = EventsUtils.compareEventsFiles( expected, actual );
+//				Assert.assertEquals( EventsFileComparator.Result.FILES_ARE_EQUAL, result );
+//			}
+//
+//		} catch ( Exception ee ) {
+//			Logger.getLogger(this.getClass()).fatal("there was an exception: \n" + ee ) ;
+//
+//			// if one catches an exception, then one needs to explicitly fail the test:
+//			Assert.fail();
+//		}
+//
+//
+//	}
 
-		try {
-			final URL baseUrl = ExamplesUtils.getTestScenarioURL( "equil" );
-			final String fullUrl = IOUtils.extendUrl( baseUrl, "config.xml" ).toString();
-			String [] args = {fullUrl,
-				  "--config:controler.outputDirectory", utils.getOutputDirectory(),
-				  "--config:controler.lastIteration", "1"
-			} ;
-			RunMatsim.main( args ) ;
-			{
-				Population expected = PopulationUtils.createPopulation( ConfigUtils.createConfig() ) ;
-				PopulationUtils.readPopulation( expected, utils.getInputDirectory() + "/output_plans.xml.gz" );
-
-				Population actual = PopulationUtils.createPopulation( ConfigUtils.createConfig() ) ;
-				PopulationUtils.readPopulation( actual, utils.getOutputDirectory() + "/output_plans.xml.gz" );
-
-				boolean result = PopulationUtils.comparePopulations( expected, actual );
-				Assert.assertTrue( result );
-			}
-			{
-				String expected = utils.getInputDirectory() + "/output_events.xml.gz" ;
-				String actual = utils.getOutputDirectory() + "/output_events.xml.gz" ;
-				EventsFileComparator.Result result = EventsUtils.compareEventsFiles( expected, actual );
-				Assert.assertEquals( EventsFileComparator.Result.FILES_ARE_EQUAL, result );
-			}
-
-		} catch ( Exception ee ) {
-			Logger.getLogger(this.getClass()).fatal("there was an exception: \n" + ee ) ;
-
-			// if one catches an exception, then one needs to explicitly fail the test:
-			Assert.fail();
-		}
-
-
-	}
-
-	@Test
-	public void main(){
-
-		Assert.fail();
-
-	}
 }

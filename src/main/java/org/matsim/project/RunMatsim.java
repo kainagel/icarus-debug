@@ -28,6 +28,8 @@ import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
 import org.matsim.core.scenario.ScenarioUtils;
 
+import java.util.Arrays;
+
 import static org.matsim.core.config.groups.PlansCalcRouteConfigGroup.*;
 
 /**
@@ -38,8 +40,14 @@ public class RunMatsim{
 
 	public static void main(String[] args) {
 
-		Config config = ConfigUtils.loadConfig( "scenarios/icarus-debug/config.xml" ) ;
-		
+		Config config ;
+
+		if ( args==null || args.length==0 ){
+			config = ConfigUtils.loadConfig( "scenarios/icarus-debug/config.xml" );
+		} else {
+			config = ConfigUtils.loadConfig( args ) ;
+		}
+
 		// possibly modify config here
 		config.controler().setOverwriteFileSetting( OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists );
 		config.controler().setOutputDirectory( "output" );
@@ -49,6 +57,13 @@ public class RunMatsim{
 
 		config.transit().setUseTransit( false );
 		config.plansCalcRoute().addModeRoutingParams( new ModeRoutingParams( TransportMode.pt ).setTeleportedModeFreespeedFactor( 2. ) );
+
+		// so that command line argument are applied _after_ all the above material:
+		if ( args!=null && args.length>=1 ){
+			String[] typedArgs = Arrays.copyOfRange( args, 1, args.length );
+			ConfigUtils.applyCommandline( config, typedArgs ) ;
+		}
+
 
 		// ---
 		
