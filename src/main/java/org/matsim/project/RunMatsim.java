@@ -18,6 +18,7 @@
  * *********************************************************************** */
 package org.matsim.project;
 
+import ch.sbb.matsim.config.SwissRailRaptorConfigGroup;
 import ch.sbb.matsim.routing.pt.raptor.SwissRailRaptorModule;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.TransportMode;
@@ -55,8 +56,11 @@ public class RunMatsim{
 
 		config.plans().setInputFile( "plans-reduced.xml" );
 
-		config.transit().setUseTransit( false );
-		config.plansCalcRoute().addModeRoutingParams( new ModeRoutingParams( TransportMode.pt ).setTeleportedModeFreespeedFactor( 2. ) );
+//		config.transit().setUseTransit( false );
+//		config.plansCalcRoute().addModeRoutingParams( new ModeRoutingParams( TransportMode.pt ).setTeleportedModeFreespeedFactor( 2. ) );
+
+		SwissRailRaptorConfigGroup raptorConfig = ConfigUtils.addOrGetModule( config, SwissRailRaptorConfigGroup.class );
+		raptorConfig.setUseIntermodalAccessEgress( true );
 
 		// so that command line argument are applied _after_ all the above material:
 		if ( args!=null && args.length>=1 ){
@@ -77,7 +81,7 @@ public class RunMatsim{
 		
 		// possibly modify controler here
 
-//		controler.addOverridingModule( new SwissRailRaptorModule() );
+		controler.addOverridingModule( new SwissRailRaptorModule() );
 
 //		controler.addOverridingModule( new OTFVisLiveModule() ) ;
 		
