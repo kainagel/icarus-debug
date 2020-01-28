@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plans SYSTEM "http://www.matsim.org/files/dtd/plans_v4.dtd">
+<plans>
+  <person id="100050">
+    <plan selected="yes">
+      <act end_time="09:09:46" type="home" x="660269.8827909501" y="962229.6519310061"/>
+      <leg trav_time="00:14:09" mode="car"/>
+      <act start_time="09:23:55" end_time="09:28:55" type="breakfast" x="663132.501100707" y="949677.2689759734"/>
+      <leg trav_time="00:13:48" mode="car"/>
+      <act start_time="09:42:43" end_time="10:30:34" type="home" x="660269.8827909501" y="962229.6519310061"/>
+      <leg trav_time="00:02:53" mode="bike"/>
+      <act start_time="10:33:28" end_time="10:46:45" type="visiting" x="663764.2540617731" y="965511.1597768234"/>
+      <leg trav_time="00:14:39" mode="bike"/>
+      <act start_time="11:01:25" end_time="12:03:54" type="visiting" x="667194.972892414" y="984697.2392479556"/>
+      <leg trav_time="00:14:39" mode="bike"/>
+      <act start_time="12:18:33" end_time="12:39:45" type="home" x="660269.8827909501" y="962229.6519310061"/>
+      <leg trav_time="00:09:14" mode="car"/>
+      <act start_time="12:49:00" end_time="12:56:03" type="shopping" x="645495.7813621976" y="902516.4138963264"/>
+      <leg trav_time="00:09:00" mode="car"/>
+      <act start_time="13:05:03" end_time="13:39:45" type="home" x="660269.8827909501" y="962229.6519310061"/>
+      <leg trav_time="00:07:46" mode="car"/>
+      <act start_time="13:47:32" end_time="13:53:02" type="other_maintenence" x="827842.3951365923" y="860814.2429077037"/>
+      <leg trav_time="00:08:46" mode="car"/>
+      <act start_time="14:01:49" end_time="14:06:49" type="shopping" x="663132.501100707" y="949677.2689759734"/>
+      <leg trav_time="00:08:17" mode="car"/>
+      <act start_time="14:15:06" end_time="14:21:16" type="other_maintenence" x="827842.3951365923" y="860814.2429077037"/>
+      <leg trav_time="00:08:42" mode="car"/>
+      <act start_time="14:29:58" type="home" x="660269.8827909501" y="962229.6519310061"/>
+    </plan>
+  </person>
+  <person id="1000377">
+    <plan selected="yes">
+      <act end_time="10:28:36" type="home" x="602946.1367909529" y="936639.4839000175"/>
+      <leg trav_time="00:03:12" mode="car"/>
+      <act start_time="10:31:48" end_time="11:38:58" type="other_maintenence" x="608113.8311407618" y="968304.2804092698"/>
+      <leg trav_time="00:02:51" mode="car"/>
+      <act start_time="11:41:49" end_time="13:26:34" type="shopping" x="607905.099033901" y="970104.2399271982"/>
+      <leg trav_time="00:05:28" mode="car"/>
+      <act start_time="13:32:02" type="home" x="602946.1367909529" y="936639.4839000175"/>
+    </plan>
+  </person>
+  <person id="1000685">
+    <plan selected="yes">
+      <act end_time="12:12:07" type="home" x="602771.2462270332" y="938018.4023950119"/>
+      <leg trav_time="00:18:12" mode="car"/>
+      <act start_time="12:30:19" end_time="12:35:19" type="shopping" x="583093.2977111296" y="974445.3336228103"/>
+      <leg trav_time="00:23:11" mode="car"/>
+      <act start_time="12:58:30" end_time="13:06:58" type="other_maintenence" x="640985.1485599977" y="979382.2888342662"/>
+      <leg trav_time="00:15:33" mode="car"/>
+      <act start_time="13:22:31" end_time="19:19:44" type="home" x="602771.2462270332" y="938018.4023950119"/>
+      <leg trav_time="00:11:32" mode="car"/>
+      <act start_time="19:31:16" end_time="20:19:19" type="shopping" x="590347.3014698789" y="937129.3469167758"/>
+      <leg trav_time="00:18:50" mode="car"/>
+      <act start_time="20:38:10" end_time="21:01:58" type="lunch" x="684788.3308125356" y="973566.953097269"/>
+      <leg trav_time="00:08:36" mode="car"/>
+      <act start_time="21:10:35" type="home" x="602771.2462270332" y="938018.4023950119"/>
+    </plan>
+  </person>
+  <person id="1002726">
+    <plan selected="yes">
+      <act end_time="08:02:19" type="home" x="609520.0109781976" y="973214.4408781092"/>
+      <leg trav_time="01:31:26" mode="pt"/>
+      <act start_time="09:33:45" end_time="10:02:18" type="asu_related" x="680785.0013700492" y="840521.5860256465"/>
+      <leg trav_time="01:31:38" mode="pt"/>
+      <act start_time="11:33:57" end_time="12:32:19" type="home" x="609520.0109781976" y="973214.4408781092"/>
+      <leg trav_time="00:25:02" mode="car"/>
+      <act start_time="12:57:21" end_time="16:32:18" type="university" x="681985.7984158833" y="838866.1075199379"/>
+      <leg trav_time="00:34:54" mode="car"/>
+      <act start_time="17:07:13" end_time="18:32:19" type="home" x="609520.0109781976" y="973214.4408781092"/>
+      <leg trav_time="00:10:04" mode="car"/>
+      <act start_time="18:42:23" end_time="18:52:54" type="other_maintenence" x="599211.8290361125" y="976300.682213385"/>
+      <leg trav_time="00:11:14" mode="car"/>
+      <act start_time="19:04:08" end_time="19:32:18" type="home" x="609520.0109781976" y="973214.4408781092"/>
+      <leg trav_time="00:06:12" mode="car"/>
+      <act start_time="19:38:31" end_time="19:43:31" type="shopping" x="608341.7244071608" y="876817.0679425378"/>
+      <leg trav_time="00:06:12" mode="car"/>
+      <act start_time="19:49:43" end_time="20:24:28" type="home" x="609520.0109781976" y="973214.4408781092"/>
+      <leg trav_time="00:00:51" mode="car"/>
+      <act start_time="20:25:19" end_time="20:30:19" type="eating" x="608801.4162484022" y="971713.2211381199"/>
+      <leg trav_time="00:00:51" mode="car"/>
+      <act start_time="20:31:10" type="home" x="609520.0109781976" y="973214.4408781092"/>
+    </plan>
+  </person>
+  <person id="1003063">
+    <plan selected="yes">
+      <act end_time="08:37:58" type="home" x="609809.8012233084" y="972717.0106706015"/>
+      <leg trav_time="00:04:32" mode="car"/>
+      <act start_time="08:42:30" end_time="13:07:58" type="workplace" x="617632.6184447116" y="967131.2304471844"/>
+      <leg trav_time="00:19:59" mode="walk"/>
+      <act start_time="13:27:57" end_time="13:35:58" type="shopping" x="615907.5060533638" y="974363.6282077522"/>
+      <leg trav_time="00:19:59" mode="walk"/>
+      <act start_time="13:55:57" end_time="16:12:58" type="workplace" x="616709.7733884158" y="967827.3410422441"/>
+      <leg trav_time="00:04:45" mode="car"/>
+      <act start_time="16:17:43" type="home" x="609809.8012233084" y="972717.0106706015"/>
+    </plan>
+  </person>
+</plans>

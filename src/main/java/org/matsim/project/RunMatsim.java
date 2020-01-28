@@ -20,6 +20,8 @@ package org.matsim.project;
 
 import ch.sbb.matsim.config.SwissRailRaptorConfigGroup;
 import ch.sbb.matsim.routing.pt.raptor.SwissRailRaptorModule;
+import org.apache.log4j.Category;
+import org.apache.log4j.Logger;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.TransportMode;
 import org.matsim.core.config.Config;
@@ -37,55 +39,66 @@ import static org.matsim.core.config.groups.PlansCalcRouteConfigGroup.*;
  * @author nagel
  *
  */
+
 public class RunMatsim{
+	private static final Logger log = Logger.getLogger(RunMatsim.class);
 
 	public static void main(String[] args) {
 
 		Config config ;
 
 		if ( args==null || args.length==0 ){
-			config = ConfigUtils.loadConfig( "scenarios/icarus-debug/config.xml" );
+			config = ConfigUtils.loadConfig( "scenarios/simplified/config.xml" );
 		} else {
 			config = ConfigUtils.loadConfig( args ) ;
 		}
 
-		// possibly modify config here
+		// CONFIG MODIFICATION
+
 		config.controler().setOverwriteFileSetting( OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists );
 		config.controler().setOutputDirectory( "output" );
 		config.controler().setLastIteration( 0 );
 
-		config.plans().setInputFile( "plans-reduced.xml" );
-
 //		config.transit().setUseTransit( false );
 //		config.plansCalcRoute().addModeRoutingParams( new ModeRoutingParams( TransportMode.pt ).setTeleportedModeFreespeedFactor( 2. ) );
 
-		SwissRailRaptorConfigGroup raptorConfig = ConfigUtils.addOrGetModule( config, SwissRailRaptorConfigGroup.class );
-		raptorConfig.setUseIntermodalAccessEgress( true );
+		// SWISS RAIL RAPTOR SETUP
 
-		// so that command line argument are applied _after_ all the above material:
+//		SwissRailRaptorConfigGroup raptorConfig = ConfigUtils.addOrGetModule( config, SwissRailRaptorConfigGroup.class );
+//		raptorConfig.setUseIntermodalAccessEgress( true );
+//		SwissRailRaptorConfigGroup.IntermodalAccessEgressParameterSet walkEgress = null;
+//
+//		for(SwissRailRaptorConfigGroup.IntermodalAccessEgressParameterSet egress : raptorConfig.getIntermodalAccessEgressParameterSets())
+//			if("pt_walk".equals(egress.getMode()))
+//				walkEgress = egress;
+//		if (walkEgress == null) {
+//			log.warn("Did not find raptor egress parameters in config; manually adding them.");
+//			walkEgress = new SwissRailRaptorConfigGroup.IntermodalAccessEgressParameterSet();
+//			walkEgress.setMode("pt_walk");
+//			walkEgress.setInitialSearchRadius(1000.0);
+//			walkEgress.setMaxRadius(3000.0);
+//			walkEgress.setSearchExtensionRadius(1000.0);
+//			raptorConfig.addIntermodalAccessEgress(walkEgress);
+//		}
+
+		// PARSE COMMAND LINE ARGS
+
 		if ( args!=null && args.length>=1 ){
 			String[] typedArgs = Arrays.copyOfRange( args, 1, args.length );
-			ConfigUtils.applyCommandline( config, typedArgs ) ;
+			ConfigUtils.applyCommandline( config, typedArgs );
 		}
 
+		// MODIFY SCENARIO
 
-		// ---
+		Scenario scenario = ScenarioUtils.loadScenario(config);
 		
-		Scenario scenario = ScenarioUtils.loadScenario(config) ;
-		
-		// possibly modify scenario here
-		
-		// ---
-		
-		Controler controler = new Controler( scenario ) ;
-		
-		// possibly modify controler here
+		// MODIFY CONTROLER
 
-		controler.addOverridingModule( new SwissRailRaptorModule() );
-
+		Controler controler = new Controler( scenario );
+//		controler.addOverridingModule( new SwissRailRaptorModule() );
 //		controler.addOverridingModule( new OTFVisLiveModule() ) ;
 		
-		// ---
+		// RUN SIMULATION
 		
 		controler.run();
 	}
