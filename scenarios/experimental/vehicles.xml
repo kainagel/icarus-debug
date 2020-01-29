@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<vehicleDefinitions xmlns="http://www.matsim.org/files/dtd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.matsim.org/files/dtd http://www.matsim.org/files/dtd/vehicleDefinitions_v2.0.xsd">
+<vehicleDefinitions
+        xmlns="http://www.matsim.org/files/dtd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.matsim.org/files/dtd http://www.matsim.org/files/dtd/vehicleDefinitions_v2.0.xsd">
     <vehicleType id="Bus">
         <attributes>
             <attribute name="accessTimeInSecondsPerPerson" class="java.lang.Double">0.5</attribute>
@@ -62,22 +65,21 @@
         <flowEfficiencyFactor factor="1.0"/>
         <!--        <costInformation></costInformation>-->
     </vehicleType>
-    <!--
-        <vehicleType id="netwalk">
-            <attributes>
-                <attribute name="accessTimeInSecondsPerPerson" class="java.lang.Double">1.0</attribute>
-                <attribute name="doorOperationMode" class="java.lang.String">serial</attribute>
-                <attribute name="egressTimeInSecondsPerPerson" class="java.lang.Double">1.0</attribute>
-            </attributes>
-            <capacity seats="1" standingRoomInPersons="0"></capacity>
-            <length meter="1.0"/>
-            <width meter="1.0"/>
-            <maximumVelocity meterPerSecond="1.4"/>
-            <passengerCarEquivalents pce="0.0"/>
-            <networkMode networkMode="bike"/>
-            <description>This is a networked walk</description>
-            <flowEfficiencyFactor factor="1.0"/>
-            <costInformation></costInformation>
-        </vehicleType>
-    -->
+
+    <vehicleType id="netwalk">
+        <attributes>
+            <attribute name="accessTimeInSecondsPerPerson" class="java.lang.Double">1.0</attribute>
+            <attribute name="doorOperationMode" class="java.lang.String">serial</attribute>
+            <attribute name="egressTimeInSecondsPerPerson" class="java.lang.Double">1.0</attribute>
+        </attributes>
+        <capacity seats="1" standingRoomInPersons="0"/>
+        <length meter="1.0"/>
+        <width meter="1.0"/>
+        <maximumVelocity meterPerSecond="1.4"/>
+        <passengerCarEquivalents pce="0.0"/>
+        <networkMode networkMode="bike"/>
+<!--        <description>This is a networked walk</description>-->
+        <flowEfficiencyFactor factor="1.0"/>
+<!--        <costInformation></costInformation>-->
+    </vehicleType>
 </vehicleDefinitions>

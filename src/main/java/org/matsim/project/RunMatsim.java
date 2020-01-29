@@ -64,20 +64,24 @@ public class RunMatsim{
 
 		// SWISS RAIL RAPTOR SETUP
 
+		// not sure why, but this module never loads correctly from config
+		// will always need to setup swissRailRaptorHere
+
 //		SwissRailRaptorConfigGroup raptorConfig = ConfigUtils.addOrGetModule( config, SwissRailRaptorConfigGroup.class );
 //		raptorConfig.setUseIntermodalAccessEgress( true );
 //		SwissRailRaptorConfigGroup.IntermodalAccessEgressParameterSet walkEgress = null;
+//		String walkType = "netwalk";
 //
 //		for(SwissRailRaptorConfigGroup.IntermodalAccessEgressParameterSet egress : raptorConfig.getIntermodalAccessEgressParameterSets())
-//			if("pt_walk".equals(egress.getMode()))
+//			if(walkType.equals(egress.getMode()))
 //				walkEgress = egress;
 //		if (walkEgress == null) {
 //			log.warn("Did not find raptor egress parameters in config; manually adding them.");
 //			walkEgress = new SwissRailRaptorConfigGroup.IntermodalAccessEgressParameterSet();
-//			walkEgress.setMode("pt_walk");
+//			walkEgress.setMode(walkType);
 //			walkEgress.setInitialSearchRadius(1000.0);
-//			walkEgress.setMaxRadius(3000.0);
-//			walkEgress.setSearchExtensionRadius(1000.0);
+//			walkEgress.setMaxRadius(2000.0);
+//			walkEgress.setSearchExtensionRadius(500.0);
 //			raptorConfig.addIntermodalAccessEgress(walkEgress);
 //		}
 
@@ -95,6 +99,7 @@ public class RunMatsim{
 		// MODIFY CONTROLER
 
 		Controler controler = new Controler( scenario );
+
 //		controler.addOverridingModule( new SwissRailRaptorModule() );
 //		controler.addOverridingModule( new OTFVisLiveModule() ) ;
 		

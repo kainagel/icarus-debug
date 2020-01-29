@@ -86,9 +86,9 @@
       <act end_time="08:37:58" type="home" x="609809.8012233084" y="972717.0106706015"/>
       <leg trav_time="00:04:32" mode="car"/>
       <act start_time="08:42:30" end_time="13:07:58" type="workplace" x="617632.6184447116" y="967131.2304471844"/>
-      <leg trav_time="00:19:59" mode="walk"/>
+      <leg trav_time="00:19:59" mode="netwalk"/>
       <act start_time="13:27:57" end_time="13:35:58" type="shopping" x="615907.5060533638" y="974363.6282077522"/>
-      <leg trav_time="00:19:59" mode="walk"/>
+      <leg trav_time="00:19:59" mode="netwalk"/>
       <act start_time="13:55:57" end_time="16:12:58" type="workplace" x="616709.7733884158" y="967827.3410422441"/>
       <leg trav_time="00:04:45" mode="car"/>
       <act start_time="16:17:43" type="home" x="609809.8012233084" y="972717.0106706015"/>

@@ -476,6 +476,15 @@
                 <param name="dailyUtilityConstant" value="0.0"/>
                 <param name="marginalUtilityOfDistance_util_m" value="0.0"/>
                 <param name="marginalUtilityOfTraveling_util_hr" value="-6.0"/>
+                <param name="mode" value="netwalk"/>
+                <param name="monetaryDistanceRate" value="0.0"/>
+            </parameterset>
+            <parameterset type="modeParams">
+                <param name="constant" value="0.0"/>
+                <param name="dailyMonetaryConstant" value="0.0"/>
+                <param name="dailyUtilityConstant" value="0.0"/>
+                <param name="marginalUtilityOfDistance_util_m" value="0.0"/>
+                <param name="marginalUtilityOfTraveling_util_hr" value="-6.0"/>
                 <param name="mode" value="default"/>
                 <param name="monetaryDistanceRate" value="0.0"/>
             </parameterset>
@@ -504,6 +513,16 @@
             <param name="mode" value="default"/>
             <param name="teleportedModeFreespeedFactor" value="null"/>
             <param name="teleportedModeSpeed" value="1.4"/>
+        </parameterset>
+    </module>
+    <module name="swissRailRaptor">
+        <param name="useIntermodalAccessEgress" value="true" />
+        <parameterset type="intermodalAccessEgress">
+            <param name="mode" value="netwalk"/>
+            <param name="maxRadius" value="2000.0"/>
+            <param name="initialSearchRadius" value="1000.0"/>
+            <param name="searchExtensionRadius" value="500.0"/>
+            <param name="" value=""/>
         </parameterset>
     </module>
     <module name="qsim">
